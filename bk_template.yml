@@ -1,0 +1,10 @@
+agents:
+  queue: "something"
+
+steps:
+  - command: {{ comequieto }}
+  - command: "blahblah.sh"
+  - label: "Yada"
+    command: "yada.sh"
+    agents:
+      queue: "other"
