@@ -1,0 +1,26 @@
+bp2:
+  variables:
+    project_id: devops-nonprod
+    repository: mydeploy
+  stepStores:
+    - https://github.com/bp2/bp2templates
+    - git@bitbucket.trimble.tools/dgb/bp2
+
+steps:
+- label: "test"
+  command: command {{ repository }}
+- label: ":golang: Deploy"
+  bp2:
+    template: go_private_cf_deploy
+    parameters:
+      function_name: Mixer
+      project_id: {{ repository }}
+      args:
+        - --trigger-type=http
+- block: ":rocket: Release more functions!"
+- label: ":rocket: Deploy more functions"
+  bp2:
+    template: cloud_functions_deploy
+    parameters:
+      dotnetVersion: 6.0
+- wait

@@ -19,4 +19,5 @@ template = Template(open('bk_template.yml','r').read())
 
 data= {'comequieto': 'aaaaa'}
 
-print(template.render(data))
+with open('newfile.yaml', 'w') as out:
+  out.write(template.render(data))
