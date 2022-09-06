@@ -1,0 +1,5 @@
+steps:
+  - command: "echo \"Tested pipeline\""
+    label: ":egg:"
+  - command: "echo \"Oi\""
+    label: ":llama:"
