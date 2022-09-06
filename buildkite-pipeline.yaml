@@ -1,5 +1,5 @@
 steps:
   - command: "echo \"Tested pipeline\""
     label: ":egg:"
-  - commang: python3 main.py
+  - command: python3 main.py
     label: ":llama: AGAIN"
