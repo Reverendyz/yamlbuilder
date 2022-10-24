@@ -3,3 +3,4 @@ steps:
     label: ":egg:"
   - command: python3 main.py
     label: ":llama: AGAIN"
+  - command: "buildkite-agent annotate 'Example `default` style' --context 'ctx-default'"
